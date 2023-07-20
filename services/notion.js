@@ -17,7 +17,8 @@ module.exports = async function getMovies() {
             id: page.properties.slug.rich_text[0].plain_text,
             title: page.properties.title.title[0].plain_text,
             author: page.properties.authors.rich_text[0].plain_text,
-            rating: page.properties.rating.select.name
+            rating: page.properties.rating.select.name,
+            img: page.properties.img.files[0].external.url
         };
     });
 
