@@ -1,9 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const getMovies = require('./services/notion.js');
 
 const PORT = process.env.PORT || 8000;
 
 const app = express();
+app.use(cors());
 
 app.get('/api/movies', async (req, res) => {
     const movies = await getMovies();
