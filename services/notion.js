@@ -20,6 +20,8 @@ module.exports = async function getMovies() {
             rating: page.properties.rating.select.name,
             img: page.properties.img.files[0].external.url
         };
+    }).sort((a, b) => {
+        return a.title.localeCompare(b.title);
     });
 
     return movies;
