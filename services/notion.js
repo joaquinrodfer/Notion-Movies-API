@@ -18,7 +18,8 @@ module.exports = async function getMovies() {
             title: page.properties.title.title[0].plain_text,
             author: page.properties.authors.rich_text[0].plain_text,
             rating: page.properties.rating.select.name,
-            img: page.properties.img.files[0].external.url
+            img: page.properties.img.files[0].external.url,
+            type: page.properties.type.select.name,
         };
     }).sort((a, b) => {
         return a.title.localeCompare(b.title);
